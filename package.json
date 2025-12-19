@@ -1,0 +1,56 @@
+{
+  "name": "@maveio/data",
+  "version": "0.1.0",
+  "description": "Video analytics client for mave.io",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "example": "npm run build && node bin/serve_example.js",
+    "example:serve": "node bin/serve_example.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "keywords": [
+    "mave",
+    "video",
+    "analytics",
+    "metrics",
+    "data"
+  ],
+  "author": "mave.io",
+  "license": "AGPL-3.0-only",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "devDependencies": {
+    "esbuild-plugin-replace": "^1.4.0",
+    "happy-dom": "^20.0.11",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.2",
+    "vitest": "^4.0.16"
+  },
+  "dependencies": {},
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maveio/data.git"
+  }
+}

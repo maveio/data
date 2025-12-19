@@ -1,0 +1,8 @@
+# In case you use Node.js/npm, you want to ignore these.
+npm-debug.log
+
+.elixir-tools
+node_modules
+.DS_Store
+.env
+.envrc
