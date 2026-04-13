@@ -19,7 +19,11 @@
     "example:serve": "node bin/serve_example.js",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "release:check": "npm run build && npm run typecheck && npm test",
+    "release:tag": "node ./bin/release_tag.js",
+    "release": "node ./bin/release_tag.js",
+    "release:push": "git push origin HEAD --tags"
   },
   "files": [
     "dist"
