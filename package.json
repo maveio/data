@@ -34,9 +34,6 @@
   ],
   "author": "mave.io",
   "license": "AGPL-3.0-only",
-  "engines": {
-    "node": ">=24.0.0"
-  },
   "devDependencies": {
     "esbuild-plugin-replace": "^1.4.0",
     "happy-dom": "^20.0.11",
