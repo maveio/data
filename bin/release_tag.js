@@ -73,6 +73,23 @@ run('npm', ['version', '--no-git-tag-version', releaseArg], {
 const version = readPackageVersion();
 const tag = `v${version}`;
 
+const filesToCommit = ['package.json'];
+
+try {
+  run('git', ['ls-files', '--error-unmatch', 'package-lock.json']);
+  filesToCommit.push('package-lock.json');
+} catch {
+  // package-lock.json is optional
+}
+
+run('git', ['add', ...filesToCommit], {
+  stdio: 'inherit',
+});
+
+run('git', ['commit', '-m', `@maveio/data ${version}`], {
+  stdio: 'inherit',
+});
+
 try {
   run('git', ['rev-parse', '-q', '--verify', `refs/tags/${tag}`]);
   fail(`Tag ${tag} already exists.`);

@@ -19,8 +19,9 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '24.0.0'
+          node-version: '24'
           cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
 
       - run: npm ci
       - run: npm run typecheck
@@ -38,7 +39,7 @@ jobs:
           fi
 
       - name: Publish to NPM
-        run: npm publish --provenance
+        run: npm publish --access public
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2

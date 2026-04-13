@@ -99,6 +99,7 @@ Typical release flow:
    - runs `build`, `typecheck`, and `test`
    - verifies your git working tree is clean
    - bumps the version in `package.json`
+   - creates a release commit for that version bump
    - creates a matching annotated git tag like `v0.1.1`
 
    You can also choose a different bump:
