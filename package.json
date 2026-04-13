@@ -1,6 +1,6 @@
 {
   "name": "@maveio/data",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Video analytics client for mave.io",
   "type": "module",
   "exports": {
