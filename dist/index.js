@@ -304,7 +304,7 @@ var _video, _lastEventType, _monitoring, _wasPlayingBeforeSeek, _seekPlayTimeout
 var Metrics = class {
   constructor(...args) {
     __privateAdd(this, _Metrics_instances);
-    this.VERSION = "0.1.1";
+    this.VERSION = "0.1.2";
     __privateAdd(this, _video);
     __privateAdd(this, _lastEventType, null);
     __privateAdd(this, _monitoring, false);
