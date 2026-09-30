@@ -81,39 +81,11 @@ This repository includes a standalone example page in `examples/video/index.html
 
 ## Release
 
-Publishing to npm is automated through GitHub Actions.
+In GitHub, open **Actions → Release package → Run workflow**, select `main`,
+and choose a version bump (default: `patch`). The action builds, typechecks and
+tests the package, commits the version and build output, then creates a tag,
+publishes to npm and creates a GitHub release. Prereleases use the npm `beta` tag;
+stable releases use `latest`. Merging a PR does not publish a release.
 
-The publish workflow runs on tags matching `v*.*.*`, verifies that the tag version
-matches `package.json`, then publishes to npm and creates a GitHub release.
-
-Typical release flow:
-
-1. Run the release command. By default it creates a patch release:
-
-   ```bash
-   npm install
-   npm run release
-   ```
-
-   This script:
-   - runs `build`, `typecheck`, and `test`
-   - verifies your git working tree is clean
-   - bumps the version in `package.json`
-   - creates a release commit for that version bump
-   - creates a matching annotated git tag like `v0.1.1`
-
-   You can also choose a different bump:
-
-   ```bash
-   npm run release -- minor
-   npm run release -- major
-   npm run release -- 0.2.0
-   ```
-
-2. Review the version bump if you want, then push the current branch and tag:
-
-   ```bash
-   npm run release:push
-   ```
-
-If the git tag and `package.json` version do not match, the publish workflow will fail.
+The existing local flow (`npm run release -- patch`, then `npm run release:push`)
+also remains available. Pushed version tags must match `package.json`.
