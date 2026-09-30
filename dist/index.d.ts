@@ -1,10 +1,10 @@
 interface Hls {
     media: HTMLMediaElement | null;
 }
-type MetricsOptions = {
+export type MetricsOptions = {
     component?: string;
 };
-declare class Metrics {
+export declare class Metrics {
     #private;
     VERSION: string;
     querySelectorable?: string;
@@ -22,5 +22,4 @@ declare class Metrics {
     monitor(): Metrics;
     demonitor(): void;
 }
-
-export { Metrics, type MetricsOptions };
+export {};

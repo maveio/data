@@ -37,15 +37,14 @@
     "data"
   ],
   "author": "mave.io",
-  "license": "AGPL-3.0-only",
+  "license": "MIT",
   "devDependencies": {
-    "esbuild-plugin-replace": "^1.4.0",
-    "happy-dom": "^20.0.11",
-    "tsup": "^8.0.0",
-    "typescript": "^5.7.2",
-    "vitest": "^4.0.16"
+    "esbuild-plugin-replace": "^2.0.0",
+    "happy-dom": "^20.14.5",
+    "tsup": "^8.5.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.2"
   },
-  "dependencies": {},
   "publishConfig": {
     "access": "public",
     "tag": "latest"
